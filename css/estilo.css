@@ -1,0 +1,74 @@
+body
+{
+	font-family: 'Roboto', sans-serif;
+	margin: auto;
+	width: 500px;
+	height: 100%;
+}
+
+header
+{
+	background-color: #f8f8fa;
+
+}
+
+#container
+{
+
+}
+
+.bot
+{
+	padding: 15px;
+	border-color:#570cff; 
+	background-color: #fff;
+	border-radius: 5px;
+	color: #570cff;
+
+}
+
+#ad
+{
+	background-color: #570cff;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.contador
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+.nome
+{
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+}
+
+.num
+{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+input
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+
+h1
+{
+	margin: 0px;
+	padding-bottom: 30px;
+	padding-top:15px;
+	padding-left:20px;
+	font-weight: lighter;
+}
