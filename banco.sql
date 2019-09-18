@@ -12,3 +12,7 @@ CREATE TABLE if not exists contador
 	primary key (codigo)
 
 );
+
+CREATE USER 'contador'@'localhost' IDENTIFIED BY 'senha123';
+
+GRANT ALL PRIVILEGES ON app_contador.* TO 'contador'@'localhost'; 
