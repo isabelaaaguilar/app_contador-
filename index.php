@@ -1,13 +1,33 @@
 <?php
 	require ('funcoes.php');
 
-	$contadores = buscarContadores();
-
 	/*foreach ($contadores as $c) 
 	{
 		echo '<p>' . $c['nome'] . '</p>';	
 	}*/
 
+	//echo $_POST ['acao'];
+	if (!empty($_POST['acao'])) 
+	{
+		if ($_POST['acao'] == "adicionar") 
+	{
+		criarContador($_POST['ncontador']);
+	}
+
+	else if ($_POST['acao'] == "mais")
+	{
+		incrementarContador($_POST['id']);
+	}
+
+	else if ($_POST['acao'] == "menos")
+	{
+		decrementarContador($_POST['id']);
+	}
+
+	$contadores = buscarContadores();
+
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +50,15 @@
 		<div id="container">
 		<?php foreach ($contadores as $c ): ?>
 			
-			<div class="contador">
-				<button class="bot">⊖</button>
+			<form action="index.php" method="POST" class="contador" id="me">
+				<button class="bot" name="acao" value="menos">⊖</button>
 				<div>
 					<p class="nome"><?= $c['nome'] ?></p>
 					<p class="num"><?= $c['numero'] ?></p>
 				</div>
-				<button class="bot">⊕</button>
-				
-			</div>
+				<button class="bot" name="acao" value="mais" id="ma">⊕</button>
+				<input type="hidden" name="id" value="<?= $c['codigo'] ?>">
+			</form>
 			
 		<?php endforeach; ?>
 			
@@ -46,10 +66,10 @@
 	</main>
 	<hr>
 	<footer>
-		<form action="index.php" method="">
+		<form action="index.php" method="POST">
 			<p><label>Novo Contador</label></p>
 			<input type="text" name="ncontador">
-			<button id="ad">Adicionar</button>
+			<button id="ad" name="acao" value="adicionar">Adicionar</button>
 		</form>
 	</footer>
 	
