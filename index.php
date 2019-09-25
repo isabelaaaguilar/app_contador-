@@ -10,24 +10,26 @@
 	if (!empty($_POST['acao'])) 
 	{
 		if ($_POST['acao'] == "adicionar") 
-	{
-		criarContador($_POST['ncontador']);
+		{
+			criarContador($_POST['ncontador']);
+		}
+
+		else if ($_POST['acao'] == "mais")
+		{
+			incrementarContador($_POST['id']);
+		}
+
+		else if ($_POST['acao'] == "menos")
+		{
+			decrementarContador($_POST['id']);
+		}
+		else if ($_POST['acao'] == "del")
+		{
+			deletarContador($_POST['id']);
+		}
 	}
 
-	else if ($_POST['acao'] == "mais")
-	{
-		incrementarContador($_POST['id']);
-	}
-
-	else if ($_POST['acao'] == "menos")
-	{
-		decrementarContador($_POST['id']);
-	}
-
-	$contadores = buscarContadores();
-
-	}
-	
+	$contadores = buscarContadores();	
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +57,7 @@
 				<div>
 					<p class="nome"><?= $c['nome'] ?></p>
 					<p class="num"><?= $c['numero'] ?></p>
+					<p><button name="acao" value="del" class="del2"><img src="imagem/trash.png"></button></p>
 				</div>
 				<button class="bot" name="acao" value="mais" id="ma">⊕</button>
 				<input type="hidden" name="id" value="<?= $c['codigo'] ?>">

@@ -55,4 +55,15 @@ function decrementarContador($id)
 		);
 }
 
+function deletarContador($id)
+{
+	$conexao = criarConexao();
+	$sql = "DELETE FROM contador WHERE codigo = ?";
+	$comando = $conexao->prepare($sql);
+	return $comando->execute(
+			[
+				$id
+			]
+		);
+}
 ?>
