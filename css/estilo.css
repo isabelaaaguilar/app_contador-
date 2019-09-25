@@ -19,6 +19,7 @@ img
 
 .bot
 {
+	display: flex;
 	padding: 15px;
 	border-color:#570cff; 
 	background-color: #fff;
@@ -52,6 +53,7 @@ img
 .del2
 {
 	text-align: center;
+
 }
 .num
 {

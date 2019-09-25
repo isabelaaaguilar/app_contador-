@@ -27,6 +27,8 @@
 		{
 			deletarContador($_POST['id']);
 		}
+
+		header("Location: index.php");
 	}
 
 	$contadores = buscarContadores();	
